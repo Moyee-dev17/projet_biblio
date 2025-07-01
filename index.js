@@ -2,5 +2,9 @@ import express from 'express';
 
 
 const app=express()
-const port=9898
-app.listen(`vous etes connectés sur le port ${port}`)
+
+const port = 3000;
+
+app.listen(port,() => {
+    console.log("Application is running on port : ", port)
+})
