@@ -1,0 +1,35 @@
+{
+    "name": "projet_biblio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "bun --watch 'index.js' --ext 'ts' --exec 'ts-node' src",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eunice-dev12/projet_biblio.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/eunice-dev12/projet_biblio/issues"
+    },
+    "homepage": "https://github.com/eunice-dev12/projet_biblio#readme",
+    "dependencies": {
+        "@prisma/client": "^6.11.0",
+        "bun": "^1.2.17",
+        "express": "^5.1.0",
+        "ts-node": "^10.9.2"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.8",
+        "prisma": "^6.11.0",
+        "tsx": "^4.20.3",
+        "typescript": "^5.8.3"
+    }
+}
