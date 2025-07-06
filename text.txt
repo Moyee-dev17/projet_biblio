@@ -1,1 +1,2 @@
-fichier texte
+dotenv // pour gerer les environnement de variable
+cors // autorisation des requete

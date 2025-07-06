@@ -20,15 +20,40 @@ model Books {
   totalPage Int
   rate Int 
   author String
+  categorieId Int
+  categories  Categories @relation(fields: [categorieId],references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Categories{
     id Int @id @default(autoincrement())
-    name String
+    name String 
+    books Books[]
     type String
     description String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
+
+model Users {
+  id       Int    @id @default(autoincrement())
+  name     String
+  lastname String
+  email    String @unique
+  password String
+  roleId   Int
+  role     Role   @relation(fields: [roleId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Role {
+  id    Int     @id @default(autoincrement())
+  name  String  
+  users Users[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
