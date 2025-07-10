@@ -24,10 +24,12 @@ export const listeBooks = async (categorieId: number) => {
       message: `Livres de la catégorie "${vrCat.name}"`,
       data: books,
     };
-  } catch (error) {
+  } catch (error:any) {
+    console.log(error.message)
     return {
       code: 500,
       message: "Erreur serveur",
+      error : error.message
     };
   }
 };

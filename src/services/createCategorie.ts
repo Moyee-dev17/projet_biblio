@@ -17,6 +17,7 @@ export const createCategorie = async (body: any) => {
         message:"les types ne correspondent pas!"
       }
     }
+    
     if (verif) {
       // Retourne un code de succès avec la catégorie existante
       return {

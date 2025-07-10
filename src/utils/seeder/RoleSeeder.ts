@@ -1,8 +1,9 @@
 import { Hash } from "node:crypto";
 import { db } from "../db";
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 
-enum role{
+export enum role{
     User=1, 
     Admin=2,
     Root=3
@@ -17,6 +18,7 @@ export const seedRole=async()=>{
         const createRole= await db.role.create({data:{name:tabRole[i]}})
         console.log("Role crée avex succes")
    }
+   
 } 
 
 export const seedRoot=async()=>{
@@ -39,6 +41,7 @@ export const seedRoot=async()=>{
     console.log("Root crée avec succes")
 }
 
+
 export const seedPwd=async()=>{
      const userExist=await db.users.findUnique({where:{email:process.env.EMAIL as string}})
      if(userExist){
@@ -51,14 +54,16 @@ export const seedPwd=async()=>{
         }
      }
 }
+ 
 
 
 
 
 
-            
-               
-            
-            
-            
-            
+
+
+
+
+
+
+ 
